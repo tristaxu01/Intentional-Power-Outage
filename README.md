@@ -28,6 +28,7 @@ This plot indicates the percentage of categories of all the events causing the m
 
 <iframe src="assets/res_price_fig.html" width=800 height=600 frameBorder=0></iframe>
 This boxplot shows the distribution of the residential power price, measured in cents per kilowatt-hour. The total price distribution was split into two categories based on the third quartile: the top 25% of residential electricity prices are categorized as high price, while the rest are categorized as low price. This visualization aims to investigate whether there is a correlation between the price category and the category of power outage causes. The plot suggests that higher residential prices may correlate with intentional attacks and severe weather conditions.
+
 | index   |   RES.PRICE(cents / kilowatt-hour) |
 |:--------|-----------------------------------:|
 | count   |                         1512       |
