@@ -64,7 +64,7 @@ After analyzing the cleaned dataset, our team has determined that the column **"
 <iframe src="assets/obeserved TVD.html" width=800 height=600 frameBorder=0></iframe>
 The plot compares the distribution of the Climate Change Region when "CUSTOMER AFFECTED" is missing to the distribution of the Climate Change Outage Region when "CUSTOMER AFFECTED"" is not missing.
 
-<iframe src="TVD.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/TVD.html" width=800 height=600 frameBorder=0></iframe>
 Based on the plot, we conclude that the distribution of the Climate Change Region when "CUSTOMER AFFECTED" is missing is the same as the distribution of the Climate Change Region when "CUSTOMER AFFECTED" is not missing. 
 **The Missingness of "CUSTOMER AFFECTED" does not depend on "Climate Change Region"**
 
@@ -73,7 +73,7 @@ Based on the plot, we conclude that the distribution of the Climate Change Regio
 <iframe src="assets/obeserved TVD in US states.html" width=800 height=600 frameBorder=0></iframe>
 The plot compares the distribution of the state of the power outage region when "CUSTOMER AFFECTED" is missing to the distribution of the state of the power outage region when "CUSTOMER AFFECTED"" is not missing.
 
-<iframe src="TVD distribution in US states.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/TVD distribution in US states.html" width=800 height=600 frameBorder=0></iframe>
 Based on the plot, we conclude that the distribution of the Climate Change Region when "CUSTOMER AFFECTED" is missing is not the same as the distribution of the Climate Change Region when "CUSTOMER AFFECTED" is not missing. 
 **The Missingness of "CUSTOMER AFFECTED" does depend on “U.S. STATE”(the state of the power outage region)**
 
