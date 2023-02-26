@@ -1,3 +1,5 @@
+# US-Power-Outages
+
 # Introduction
 Between **January 2000 to July 2016**, there were total of 1534 number power outrage that impacted at least 50,000 customers or caused an unplanned firm load loss of atleast 300 MW occured in United State. The largest power outage affected approximately 3.5 million people, and a maximum of 41,788 MW Peak Demand Power was lost during a single outage event. The focus of our website is to investigate the relationship between monthly electricity prices in the residential sector (labeled as "RES.PRICE" in the dataset) and power outages caused by intentional attacks. Specifically, we aim to determine **whether regions with a top 25% residential electricity price are more likely to experience power outages caused by intentional attacks.** 
 
@@ -15,3 +17,9 @@ Similarly, our team also found several columns describing time objects but separ
 Lastly, we rename columns: Many column names from the raw dataframe were abbreviations and ambiguous. During the cleaning process, they were renamed to names that are easier to understand and interpret.
 
 The impact of these data cleaning steps on subsequent analyses will depend on the specific research question and the nature of the data. However, in general, cleaning the data can help ensure accuracy and consistency in the analysis, reduce errors and noise in the data, and make the data easier to work with and interpret. Ultimately, the goal of data cleaning is to improve the quality and reliability of the data for analysis.
+
+# Univariate Analysis
+
+### Figure 1
+<iframe src="assets/state_fig.html" width=800 height=600 frameBorder=0></iframe>
+Figure 1 plot counts the total amount of power outage occurrences in different states.
