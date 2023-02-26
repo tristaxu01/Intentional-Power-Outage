@@ -22,4 +22,4 @@ The impact of these data cleaning steps on subsequent analyses will depend on th
 
 ### Figure 1
 <iframe src="assets/state_fig.html" width=800 height=600 frameBorder=0></iframe>
-Figure 1 plot counts the total amount of power outage occurrences in different states.
+[^1]: Figure 1 describes the total amount of recoreded major power outage occurrences in different states.
