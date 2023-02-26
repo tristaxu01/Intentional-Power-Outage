@@ -3,7 +3,7 @@
 # Introduction
 Between **January 2000 to July 2016**, there were total of 1534 number power outrage that impacted at least 50,000 customers or caused an unplanned firm load loss of atleast 300 MW occured in United State. The largest power outage affected approximately 3.5 million people, and a maximum of 41,788 MW Peak Demand Power was lost during a single outage event. The focus of our website is to investigate the relationship between monthly electricity prices in the residential sector (labeled as "RES.PRICE" in the dataset) and power outages caused by intentional attacks. Specifically, we aim to determine **whether regions with a top 25% residential electricity price are more likely to experience power outages caused by intentional attacks.** 
 
-To do this, our team will analyze data from the "RES.PRICE," "Number of customers affected by the power outage event" (CUSTOMERS.AFFECTED), and "Categories of all the events causing the major power outages" (CAUSE.CATEGORY) columns.
+To do this, our team will analyze data from the "RES.PRICE," "Number of customers affected by the power outage event" ("CUSTOMER AFFECTED"), and "Categories of all the events causing the major power outages" ("CAUSE CATEGORY") columns.
 
 # Exploratory Data Analysis
 ## Data Cleaning
@@ -20,16 +20,14 @@ Lastly, we rename columns: Many column names from the raw dataframe were abbrevi
 The impact of these data cleaning steps on subsequent analyses will depend on the specific research question and the nature of the data. However, in general, cleaning the data can help ensure accuracy and consistency in the analysis, reduce errors and noise in the data, and make the data easier to work with and interpret. Ultimately, the goal of data cleaning is to improve the quality and reliability of the data for analysis.
 
 ## Univariate Analysis
-
-This plot counts the total amount of power outage occurrences in different states.
 <iframe src="assets/state_fig.html" width=800 height=600 frameBorder=0></iframe>
+This plot counts the total amount of power outage occurrences in different states.
 
-
-This plot indicates the percentage of categories of all the events causing the major power outages.
 <iframe src="assets/cause_fig.html" width=800 height=600 frameBorder=0></iframe>
+This plot indicates the percentage of categories of all the events causing the major power outages.
 
-This boxplot shows the distribution of the residential power price, measured in cents per kilowatt-hour. The total price distribution was split into two categories based on the third quartile: the top 25% of residential electricity prices are categorized as high price, while the rest are categorized as low price. This visualization aims to investigate whether there is a correlation between the price category and the category of power outage causes. The plot suggests that higher residential prices may correlate with intentional attacks and severe weather conditions.
 <iframe src="assets/res_price_fig.html" width=800 height=600 frameBorder=0></iframe>
+This boxplot shows the distribution of the residential power price, measured in cents per kilowatt-hour. The total price distribution was split into two categories based on the third quartile: the top 25% of residential electricity prices are categorized as high price, while the rest are categorized as low price. This visualization aims to investigate whether there is a correlation between the price category and the category of power outage causes. The plot suggests that higher residential prices may correlate with intentional attacks and severe weather conditions.
 
 ## Assessment of Missingness
 
@@ -51,18 +49,30 @@ The table suggests a correlation between severe weather and intentional attacks 
 ## NMAR Analysis: 
 After analyzing the cleaned dataset, our team has determined that the column **"OUTAGE.RESTORATION (Y-M-D time)"** is **N**ot **M**issing **A**t **R**andom. This column indicates the time when power is restored in the outage region. However, due to the nature of power restoration, which may occur gradually by neighborhood over a period of several hours, it is not always possible to record the exact restoration time as a fixed point in time. Consequently, in some instances, the restoration time has been recorded as NaN in the dataframe.
 ## Missingness Dependency
+### Assessing Missingness of "CUSTOMER AFFECTED" with “Climate Change Region”
 <iframe src="assets/obeserved TVD.html" width=800 height=600 frameBorder=0></iframe>
+The plot compares the distribution of the Climate Change Region when "CUSTOMER AFFECTED" is missing to the distribution of the Climate Change Outage Region when "CUSTOMER AFFECTED"" is not missing.
+
+<iframe src="TVD.html" width=800 height=600 frameBorder=0></iframe>
+Based on the plot, we conclude that the distribution of the Climate Change Region when "CUSTOMER AFFECTED" is missing is the same as the distribution of the Climate Change Region when "CUSTOMER AFFECTED" is not missing. 
+**The Missingness of "CUSTOMER AFFECTED" does not depend on "Climate Change Region"**
+
+### Assessing Missingness of "CUSTOMER AFFECTED" with “U.S. STATE”
+
 <iframe src="assets/obeserved TVD in US states.html" width=800 height=600 frameBorder=0></iframe>
+The plot compares the distribution of the state of the power outage region when "CUSTOMER AFFECTED" is missing to the distribution of the state of the power outage region when "CUSTOMER AFFECTED"" is not missing.
+
+<iframe src="TVD distribution in US states.html" width=800 height=600 frameBorder=0></iframe>
+Based on the plot, we conclude that the distribution of the Climate Change Region when "CUSTOMER AFFECTED" is missing is not the same as the distribution of the Climate Change Region when "CUSTOMER AFFECTED" is not missing. 
+**The Missingness of "CUSTOMER AFFECTED" does depend on “U.S. STATE”(the state of the power outage region)**
 
 # Hypothesis Testing
+ 
+#### H0: Number of intentional attack in high price region == Number of intentional attack in high price region
+**Null Hypothesis:** The distribution of residential electricity prices and the number of power outages caused by intentional attack is not different. Any differences observed in our samples are due to random chance.
 
-### Null Hypothesis: 
-#### Number of intentional attack in high price region == Number of intentional attack in high price region
-Null Hypothesis: The distribution of residential electricity prices and the number of power outages caused by intentional attack is not different. Any differences observed in our samples are due to random chance.
-
-### Alternative Hypothesis
-### Number of intentional attack in high price region > Number of intentional attack in high price region
-A higher residential electricity price leads to more power outages caused by intentional attack. Any differences observed in our samples are not due to random chance.
+#### H1: Number of intentional attack in high price region > Number of intentional attack in high price region
+**Alternative Hypothesis:** A higher residential electricity price leads to more power outages caused by intentional attack. Any differences observed in our samples are not due to random chance.
 
 To test these hypotheses, we use the difference in power outage occurrence between the high electricity price region (i.e., the region that pays the top 25% of electricity prices in the US) and the lower electricity price region (i.e., the region that pays less than the top 25% of electricity prices in the US) as our test statistic.
 
