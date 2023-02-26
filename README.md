@@ -20,6 +20,25 @@ The impact of these data cleaning steps on subsequent analyses will depend on th
 
 # Univariate Analysis
 
-### Figure 1
+This plot counts the total amount of power outage occurrences in different states.
 <iframe src="assets/state_fig.html" width=800 height=600 frameBorder=0></iframe>
-[^1]: Figure 1 describes the total amount of recoreded major power outage occurrences in different states.
+
+
+This plot indicates the percentage of categories of all the events causing the major power outages.
+<iframe src="assets/cause_fig.html" width=800 height=600 frameBorder=0></iframe>
+
+This boxplot shows the distribution of the residential power price, measured in cents per kilowatt-hour. The total price distribution was split into two categories based on the third quartile: the top 25% of residential electricity prices are categorized as high price, while the rest are categorized as low price. This visualization aims to investigate whether there is a correlation between the price category and the category of power outage causes. The plot suggests that higher residential prices may correlate with intentional attacks and severe weather conditions.
+<iframe src="assets/res_price_fig.html" width=800 height=600 frameBorder=0></iframe>
+
+# Assessment of Missingness
+|   RES.PRICE(cents / kilowatt-hour) |   COM.PRICE(cents / kilowatt-hour) |   IND.PRICE(cents / kilowatt-hour) |   TOTAL.PRICE(cents / kilowatt-hour) |
+|-----------------------------------:|-----------------------------------:|-----------------------------------:|-------------------------------------:|
+|                            11.6718 |                           10.3195  |                            7.6286  |                             10.1533  |
+|                            14.7898 |                           12.6902  |                            8.6248  |                             12.6672  |
+|                            **12.1265** |                           10.0933  |                            7.16923 |                             10.0774  |
+|                            13.2293 |                           11.7702  |                            8.77413 |                             11.5096  |
+|                            10.8541 |                            9.19797 |                            6.70174 |                              9.25551 |
+|                            11.7143 |                            9.88085 |                            7.22776 |                              9.90073 |
+|                            12.139  |                           10.6279  |                            7.79025 |                             10.4984  |
+
+The table suggests a correlation between severe weather and intentional attacks and the price of electricity. To test the hypothesis that higher electricity prices may cause people to be unable to pay for electricity and, consequently, sabotage the electricity supply, we propose performing a permutation test.
