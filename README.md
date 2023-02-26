@@ -37,7 +37,7 @@ This plot counts the total amount of power outage occurrences in different state
 This plot indicates the percentage of categories of all the events causing the major power outages.
 
 <iframe src="assets/res_price_fig.html" width=800 height=600 frameBorder=0></iframe>
-This boxplot shows the distribution of the residential power price, measured in cents per kilowatt-hour. The total price distribution was split into two categories based on the third quartile: the top 25% of residential electricity prices are categorized as high price, while the rest are categorized as low price. This visualization aims to investigate whether there is a correlation between the price category and the category of power outage causes. The plot suggests that higher residential prices may correlate with intentional attacks and severe weather conditions.
+This boxplot shows the distribution of the residential power price, measured in cents per kilowatt-hour. The total price distribution was split into two categories based on the third quartile: the top 25% of residential electricity prices are categorized as high price, while the rest are categorized as low price. This visualization aims to investigate whether there is a correlation between the price category and the category of power outage causes. Our team decide to drop the NaNs in the "RES.PRICE" since the number of NaNs is negligible to the whole dataset(only less than 1% of data are NaNs). The plot suggests that higher residential prices may correlate with intentional attacks and severe weather conditions.
 
 | index   |   RES.PRICE(cents / kilowatt-hour) |
 |:--------|-----------------------------------:|
@@ -70,13 +70,14 @@ The table suggests a correlation between severe weather and intentional attacks 
 ## NMAR Analysis: 
 After analyzing the cleaned dataset, our team has determined that the column **"OUTAGE.RESTORATION (Y-M-D time)"** is **N**ot **M**issing **A**t **R**andom. This column indicates the time when power is restored in the outage region. However, due to the nature of power restoration, which may occur gradually by neighborhood over a period of several hours, it is not always possible to record the exact restoration time as a fixed point in time. Consequently, in some instances, the restoration time has been recorded as NaN in the dataframe.
 ## Missingness Dependency
-### Assessing Missingness of "CUSTOMER AFFECTED" with “Climate Change Region”
+To measure the "distance" between categorical distributions, we use the total variation distance.
+### Assessing Missingness of "CUSTOMER AFFECTED" with “Climate Change Category”
 <iframe src="assets/obeserved TVD.html" width=800 height=600 frameBorder=0></iframe>
-The plot compares the distribution of the Climate Change Region when "CUSTOMER AFFECTED" is missing to the distribution of the Climate Change Outage Region when "CUSTOMER AFFECTED"" is not missing.
+The plot compares the distribution of the Climate Change Category when "CUSTOMER AFFECTED" is missing to the distribution of the Climate Change Outage Category when "CUSTOMER AFFECTED"" is not missing.
 
 <iframe src="assets/TVD.html" width=800 height=600 frameBorder=0></iframe>
-Based on the plot, we conclude that the distribution of the Climate Change Region when "CUSTOMER AFFECTED" is missing is the same as the distribution of the Climate Change Region when "CUSTOMER AFFECTED" is not missing. 
-**The Missingness of "CUSTOMER AFFECTED" does not depend on "Climate Change Region"**
+Based on the plot, we conclude that the distribution of the Climate Change Category when "CUSTOMER AFFECTED" is missing is the same as the distribution of the Climate Change Category when "CUSTOMER AFFECTED" is not missing. 
+**The Missingness of "CUSTOMER AFFECTED" may not depend on "Climate Change Category"**
 
 ### Assessing Missingness of "CUSTOMER AFFECTED" with “U.S. STATE”
 
@@ -84,8 +85,8 @@ Based on the plot, we conclude that the distribution of the Climate Change Regio
 The plot compares the distribution of the state of the power outage region when "CUSTOMER AFFECTED" is missing to the distribution of the state of the power outage region when "CUSTOMER AFFECTED"" is not missing.
 
 <iframe src="assets/TVD distribution in US states.html" width=800 height=600 frameBorder=0></iframe>
-Based on the plot, we conclude that the distribution of the Climate Change Region when "CUSTOMER AFFECTED" is missing is not the same as the distribution of the Climate Change Region when "CUSTOMER AFFECTED" is not missing. 
-**The Missingness of "CUSTOMER AFFECTED" does depend on “U.S. STATE”(the state of the power outage region)**
+Based on the plot, we conclude that the distribution of the "U.S. States" when "CUSTOMER AFFECTED" is missing is not the same as the distribution of the "U.S. States" when "CUSTOMER AFFECTED" is not missing. 
+**The Missingness of "CUSTOMER AFFECTED" may depend on “U.S. STATE”(the state of the power outage region)**
 
 # Hypothesis Testing
  
