@@ -31,11 +31,11 @@ This boxplot shows the distribution of the residential power price, measured in 
 <iframe src="assets/res_price_fig.html" width=800 height=600 frameBorder=0></iframe>
 
 # Assessment of Missingness
-|   **RES.PRICE(cents / kilowatt-hour)** |   COM.PRICE(cents / kilowatt-hour) |   IND.PRICE(cents / kilowatt-hour) |   TOTAL.PRICE(cents / kilowatt-hour) |
+|   RES.PRICE(cents / kilowatt-hour) |   COM.PRICE(cents / kilowatt-hour) |   IND.PRICE(cents / kilowatt-hour) |   TOTAL.PRICE(cents / kilowatt-hour) |
 |-----------------------------------:|-----------------------------------:|-----------------------------------:|-------------------------------------:|
 |                            11.6718 |                           10.3195  |                            7.6286  |                             10.1533  |
 |                            14.7898 |                           12.6902  |                            8.6248  |                             12.6672  |
-|                            ==12.1265== |                           10.0933  |                            7.16923 |                             10.0774  |
+|                            **12.1265** |                           10.0933  |                            7.16923 |                             10.0774  |
 |                            13.2293 |                           11.7702  |                            8.77413 |                             11.5096  |
 |                            10.8541 |                            9.19797 |                            6.70174 |                              9.25551 |
 |                            11.7143 |                            9.88085 |                            7.22776 |                              9.90073 |
