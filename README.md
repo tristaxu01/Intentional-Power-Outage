@@ -49,7 +49,7 @@ This boxplot shows the distribution of the residential power price, measured in 
 | 75%     |                           13.9     |
 | max     |                           34.58    |
 
-## Assessment of Missingness
+## Interesting Aggregate
 
 |   RES.PRICE(cents / kilowatt-hour) |   COM.PRICE(cents / kilowatt-hour) |   IND.PRICE(cents / kilowatt-hour) |   TOTAL.PRICE(cents / kilowatt-hour) |
 |-----------------------------------:|-----------------------------------:|-----------------------------------:|-------------------------------------:|
